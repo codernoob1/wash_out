@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:wash_out/pages/laundry_card.dart';
+import 'package:wash_out/pages/order_details.dart';
 import 'package:wash_out/pages/order_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -71,9 +72,17 @@ class _HomePageState extends State<HomePage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              CategoryItem(
-                icon: Icons.local_laundry_service,
-                label: 'Dry Clean',
+              GestureDetector(
+                child: CategoryItem(
+                  icon: Icons.local_laundry_service,
+                  label: 'Dry Clean',
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => OrderDetails(text: "Dry clean")),
+                  );
+                },
               ),
               CategoryItem(
                 icon: Icons.local_laundry_service,
@@ -101,31 +110,32 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Expanded(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              LaundryShopCard(
-                name : "Meghna Laundry Shop",
-                imageUrl: 'https://img.freepik.com/premium-photo/laundry-shop-interior-with-seat-washing-machines_258219-267.jpg',
-                rating: 4.5,
+            child: SingleChildScrollView(
+              padding: EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  LaundryShopCard(
+                    name: "Meghna Laundry Shop",
+                    imageUrl:
+                        'https://img.freepik.com/premium-photo/laundry-shop-interior-with-seat-washing-machines_258219-267.jpg',
+                    rating: 4.5,
+                  ),
+                  SizedBox(height: 20),
+                  LaundryShopCard(
+                    name: "Clutchy",
+                    imageUrl:
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxLm4frhiUnraGaKr2Ip_F0xFRfk6cayeCvnuWQ_ft0g&s',
+                    rating: 3.8,
+                  ),
+                  SizedBox(height: 20),
+                  // Add more LaundryShopCard widgets as needed
+                ],
               ),
-              SizedBox(height: 20),
-              LaundryShopCard(
-                name: "Clutchy",
-                imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxLm4frhiUnraGaKr2Ip_F0xFRfk6cayeCvnuWQ_ft0g&s',
-                rating: 3.8,
-              ),
-              SizedBox(height: 20),
-              // Add more LaundryShopCard widgets as needed
-            ],
+            ),
           ),
-        ),
-      ),
         ],
-    ),
-  
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -142,9 +152,8 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
         selectedItemColor: Colors.blue,
-        currentIndex: 0, 
+        currentIndex: 0,
         onTap: (int index) {
-          
           switch (index) {
             case 0:
               break;
