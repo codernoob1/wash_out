@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:wash_out/pages/laundry_card.dart';
 import 'package:wash_out/pages/order_details.dart';
 import 'package:wash_out/pages/order_page.dart';
@@ -84,17 +85,41 @@ class _HomePageState extends State<HomePage> {
                   );
                 },
               ),
-              CategoryItem(
-                icon: Icons.local_laundry_service,
-                label: 'Laundry',
+              GestureDetector(
+                child: CategoryItem(
+                  icon: Icons.local_laundry_service,
+                  label: 'Laundry',
+                ),
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => OrderDetails(text: "Laundry")),
+                  );
+                },
               ),
-              CategoryItem(
-                icon: Icons.iron,
-                label: 'Iron',
+              GestureDetector(
+                child: CategoryItem(
+                  icon: Icons.iron,
+                  label: 'Iron',
+                ),
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => OrderDetails(text: "Iron")),
+                  );
+                },
               ),
-              CategoryItem(
-                icon: Icons.folder,
-                label: 'Folder',
+              GestureDetector(
+                child: CategoryItem(
+                  icon: Icons.folder,
+                  label: 'Folder',
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => OrderDetails(text: "Iron")),
+                  );
+                },
               ),
             ],
           ),

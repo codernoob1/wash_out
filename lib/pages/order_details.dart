@@ -41,16 +41,18 @@ class _OrderDetailsState extends State<OrderDetails> {
                 price: 10.00,
               ),
               OrderItemCard(
-                productName: 'Product Name 1',
-                description: 'Description of Product 1 goes here...',
+                productName: 'Product Name 4',
+                description: 'Description of Product 4 goes here...',
                 price: 10.00,
               ),
               SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  // Implement order now functionality
-                },
-                child: Text('Order Now'),
+              Center(
+                child: ElevatedButton(
+                  onPressed: () {
+                    // logic of order now button
+                  },
+                  child: Text('Place Order'),
+                ),
               ),
             ],
           ),
