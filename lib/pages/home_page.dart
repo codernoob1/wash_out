@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:wash_out/pages/home_card.dart';
 import 'package:wash_out/pages/laundry_card.dart';
 import 'package:wash_out/pages/order_details.dart';
 import 'package:wash_out/pages/order_page.dart';
@@ -36,27 +37,28 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Welcome,',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(height: 5),
-                Text(
-                  'John Doe',
-                  style: TextStyle(
-                    fontSize: 18,
-                  ),
-                ),
-                SizedBox(height: 10),
-                Text(
-                  'Here you can find nearby laundry services and categories to choose from.',
-                  style: TextStyle(
-                    fontSize: 16,
-                  ),
-                ),
+                DynamicCard(title: "Welcome", subtitle1: "John Doe", subtitle2: "Laundry is the real Neverending Story.",width: 400,)
+                // Text(
+                //   'Welcome,',
+                //   style: TextStyle(
+                //     fontSize: 20,
+                //     fontWeight: FontWeight.bold,
+                //   ),
+                // ),
+                // SizedBox(height: 5),
+                // Text(
+                //   'John Doe',
+                //   style: TextStyle(
+                //     fontSize: 18,
+                //   ),
+                // ),
+                // SizedBox(height: 10),
+                // Text(
+                //   'Here you can find nearby laundry services and categories to choose from.',
+                //   style: TextStyle(
+                //     fontSize: 16,
+                //   ),
+                // ),
               ],
             ),
           ),
@@ -112,12 +114,12 @@ class _HomePageState extends State<HomePage> {
               GestureDetector(
                 child: CategoryItem(
                   icon: Icons.folder,
-                  label: 'Folder',
+                  label: 'Dart Remove',
                 ),
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => OrderDetails(text: "Iron")),
+                    MaterialPageRoute(builder: (context) => OrderDetails(text: "Dart Remove")),
                   );
                 },
               ),
