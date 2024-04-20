@@ -140,19 +140,19 @@ class _OrderDetailsState extends State<OrderDetails> {
                 cart: _cart, // Pass the cart object to the OrderItemCard
               ),
               SizedBox(height: 20),
-              Center(
-                child: ElevatedButton(
-                  onPressed: () {
-                    // Logic for "Place Order" button
-                    // You can access cart items and perform order-related operations here
-                    // For example:
-                    // _cart.items.forEach((item) {
-                    //   print('Product: ${item.productName}, Quantity: ${item.quantity}');
-                    // });
-                  },
-                  child: Text('Place Order'),
-                ),
-              ),
+              // Center(
+              //   child: ElevatedButton(
+              //     onPressed: () {
+              //       // Logic for "Place Order" button
+              //       // You can access cart items and perform order-related operations here
+              //       // For example:
+              //       // _cart.items.forEach((item) {
+              //       //   print('Product: ${item.productName}, Quantity: ${item.quantity}');
+              //       // });
+              //     },
+              //     child: Text('Place Order'),
+              //   ),
+              // ),
             ],
           ),
         ),
