@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                DynamicCard(title: "Welcome", subtitle1: "John Doe", subtitle2: "Laundry is the real Neverending Story.",width: 400,)
+                DynamicCard(title: "Welcome", subtitle1: "Saptak Roy Akash", subtitle2: "Laundry is the real Never ending Story.",width: 400,)
                 // Text(
                 //   'Welcome,',
                 //   style: TextStyle(
