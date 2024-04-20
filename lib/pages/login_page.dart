@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:wash_out/components/my_textfield.dart';
-import 'package:wash_out/pages/home_page.dart';
+
 import 'package:wash_out/pages/my_button.dart';
+import 'package:wash_out/services/auth/auth_service.dart';
 
 class LoginPage extends StatefulWidget {
   final void Function()? onTap;
@@ -18,15 +18,37 @@ class _LoginPageState extends State<LoginPage> {
 
   final TextEditingController passwordlController = TextEditingController();
 
-  void login() {
-    /*
-     fill out authentication
-     */
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const HomePage(),
-        ));
+  void login() async {
+    final _authService = AuthService();
+
+    try {
+      await _authService.signInWithEmailPassword(
+        emailController.text,
+        passwordlController.text,
+      );
+    } catch (e) {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text(e.toString()),
+        ),
+      );
+    }
+    void forgotPassword() {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          backgroundColor: Theme.of(context).colorScheme.background,
+          title: const Text("User tapped forgoy Password."),
+        ),
+      );
+    }
+
+    // Navigator.push(
+    //     context,
+    //     MaterialPageRoute(
+    //       builder: (context) => const HomePage(),
+    //     ));
   }
 
   @override

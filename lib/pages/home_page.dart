@@ -6,6 +6,7 @@ import 'package:wash_out/pages/home_card.dart';
 import 'package:wash_out/pages/laundry_card.dart';
 import 'package:wash_out/pages/order_details.dart';
 import 'package:wash_out/pages/order_page.dart';
+import 'package:wash_out/pages/profile_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -192,6 +193,10 @@ class _HomePageState extends State<HomePage> {
               break;
             case 2:
               // Navigate to the profile page
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProfilePage()),
+              );
               break;
           }
         },

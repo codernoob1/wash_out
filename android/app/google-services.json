@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "375487918338",
+    "project_id": "washingout-61b50",
+    "storage_bucket": "washingout-61b50.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:375487918338:android:a99b6c0ef5ee7c0653121b",
+        "android_client_info": {
+          "package_name": "com.example.wash_out"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwDzzz4QJaGXKdKK5wY75WoLzRrA5wCnI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
